@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Users</title>
+{% endblock %} 
+
+{% block body %}
+    <h1>User List</h1>
+    {{ msg }}
+
+      <table class="table table-striped" border = 1>
+         <thead>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Phone</td>
+            <td>Password</td>
+         </thead>
+         
+         {% for row in users %}
+            <tr>
+               <td>{{row[0]}}</td>
+               <td>{{row[1]}}</td>
+               <td> {{row[2]}}</td>
+               <td>{{row[3]}}</td>	
+            </tr>
+         {% endfor %}
+      </table>
+    
+{% endblock %} 
