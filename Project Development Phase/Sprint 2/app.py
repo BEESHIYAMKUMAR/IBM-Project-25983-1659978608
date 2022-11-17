@@ -1,5 +1,3 @@
-from turtle import st
-
 import ibm_db
 from flask import Flask, redirect, render_template, request, session, url_for
 from markupsafe import escape
@@ -34,7 +32,7 @@ def login():
 
 @app.route('/addInventory')
 def addInventory():
-    return render_template('AddInventory.html')
+    return render_template('addInventory.html')
 
 
 
@@ -103,6 +101,48 @@ def signIn():
         return render_template('login.html', msg = msg)
 
 
+
+
+
+@app.route('/add', methods =['GET', 'POST'])
+def add():
+    global id
+    if request.method=='POST':
+      date=request.form['date']
+      name=request.form['itemName']
+      quantity=request.form['itemQuantity']
+      rate=request.form['itemRate']
+      total = int(quantity) * int(rate)
+      category=request.form['itemCategory']
+      id= 1 #session['id']
+      print(id)
+      insert_sql = "INSERT INTO INVENTORY (USERID, DATE, NAME, CATEGORY, QUANTITY, RATE, TOTAL) VALUES (?,?,?,?,?,?,?)"
+      prep_stmt = ibm_db.prepare(conn, insert_sql)
+      ibm_db.bind_param(prep_stmt, 1, id)
+      ibm_db.bind_param(prep_stmt, 2, date)
+      ibm_db.bind_param(prep_stmt, 3, name)
+      ibm_db.bind_param(prep_stmt, 4, category)
+      ibm_db.bind_param(prep_stmt, 5, quantity)
+      ibm_db.bind_param(prep_stmt, 6, rate)
+      ibm_db.bind_param(prep_stmt, 7, total)
+      ibm_db.execute(prep_stmt)
+
+    return render_template('history.html', msg="Data saved successfuly..")
+
+@app.route('/history')
+def history():
+  print(session['username'])
+  students = []
+  sql = "SELECT * FROM INVENTORY"
+  stmt = ibm_db.exec_immediate(conn, sql)
+  dictionary = ibm_db.fetch_both(stmt)
+  while dictionary != False:
+    # print ("The Name is : ",  dictionary)
+    students.append(dictionary)
+    dictionary = ibm_db.fetch_both(stmt)
+
+  if students:
+    return render_template("history.html", students = students)
 
 
 @app.route('/logout')

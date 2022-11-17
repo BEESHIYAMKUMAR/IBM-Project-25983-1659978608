@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add Inventory</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/addInventory.css" />
+
+</head>
+
+<body>
+
+    <form class="form" action="{{ url_for('add') }}" method="POST">
+        <div class="title">Add Inventory Stock</div>
+        <div class="subtitle">Note: Add accurate stock details</div>
+        <div class="input-container ic1">
+            <input id="date" class="input" type="date" name="date" placeholder=" " />
+            <div class="cut"></div>
+            <label for="date" class="placeholder">Date</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="itemName" class="input" type="text" name="itemName" placeholder=" " />
+            <div class="cut"></div>
+            <label for="itemName" class="placeholder">Item Name</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="itemQuantity" class="input" type="text" name="itemQuantity" placeholder=" " />
+            <div class="cut"></div>
+            <label for="itemQuantity" class="placeholder">Item Quantity</label>
+        </div>
+        <div class="input-container ic2">
+            <input id="itemRate" class="input" type="text" name="itemRate" placeholder=" " />
+            <div class="cut"></div>
+            <label for="itemRate" class="placeholder">Item Rate</label>
+        </div>
+        <div class="input-container ic2">
+            <select id="itemCategory" class="input" name="itemCategory" placeholder=" ">
+                <option value="food">Food</option>
+                <option value="electronicitems">Electronic Items</option>
+                <option value="books">Books</option>
+                <option value="furniture">Furniture</option>
+                <option value="cosmetics">Cosmetics</option>
+                <option value="miscellaneous">Miscellaneous</option>
+            </select>
+            <div class="cut"></div>
+            <label for="itemCategory" class="placeholder">Item Category</label>
+        </div>
+        <input type="submit" class="submit" value="Submit">
+
+    </form>
+</body>
+
+</html>
