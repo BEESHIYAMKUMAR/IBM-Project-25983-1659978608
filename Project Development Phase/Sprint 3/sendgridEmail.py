@@ -2,9 +2,9 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-sg = sendgrid.SendGridAPIClient(api_key='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')
+sg = sendgrid.SendGridAPIClient(api_key='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')
 from_email = Email("maaz19121.it@rmkec.ac.in")
-to_email = To("byna19127.cs@rmkec.ac.in")
+to_email = To("maazhussain43@gmail.com")
 subject = "Sending with SendGrid is Fun"
 content = Content("text/plain", "Look how beautifully the mail is being sent.. Hehehehe")
 mail = Mail(from_email, to_email, subject, content)

@@ -1,0 +1,39 @@
+/* HOME PAGE  */
+.heading{
+    margin-left: 15%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FFD700;
+    text-shadow:0 1px 0 #FFD700, 0 2px 0 #d4b501,
+             0 3px 0 #d3ad06, 0 4px 0 #f8e807,
+             0 5px 0 #f3d423, 0 6px 0 #fafd38,
+             0 7px 0 #f8e110, 0 8px 7px rgba(0, 0, 0, 0.4),
+             0 9px 10px rgba(248, 232, 10, 0.2);
+    font-size: 80px;
+}
+
+.tagline{
+    margin-left: 15%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 50px;
+    color:#000000;
+    font-size: 25px;
+
+}
+
+.title{
+    font-size: 35px;
+    color: #FFD700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 0 1px 0 #FFD700, 0 2px 0 #d4b501,
+         0 9px 10px rgba(0, 0, 0, 0.2);
+    margin: 60px;
+}
+
+.description{
+    font-size: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 50px;
+    margin-right: 50px;
+    color: rgb(0, 0, 0);
+}
+

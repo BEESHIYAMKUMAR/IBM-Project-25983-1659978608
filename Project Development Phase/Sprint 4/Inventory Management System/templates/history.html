@@ -1,60 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+        <script type="text/javascript" src="jscript/graph.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <link
+        rel="icon"
+        href="../static/images/Invento1.jpeg"
+        type="image/icon type"
+    />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://www.w3schools.com/w3css/4/w3.css"
+        />
+        <link rel="stylesheet" href="../static/css/history.css" />
+    </head>
 
-<head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/css/history.css" />
-</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"> &nbsp;&nbsp; Invento </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    Inventory Management System</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home"
+                            >Home <span class="sr-only">(current)</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addInventory"
+                            >Add Inventory</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/history"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Stock History</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="reports"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Report</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/logout"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Logout</a
+                        >
+                    </li>
+                </ul>
             </div>
-            <ul class="nav navbar-nav">
+        </nav>
 
-                <li class="active"><a href="/home">Home</a></li>
-                <li><a href="/addInventory">Add</a></li>
-                <li><a href="/history">History</a></li>
-                <li><a href="/limit">Limit</a></li>
-                <li><a href="/today">Report</a></li>
-
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+        <div class="container">
+            <table class="table table-dark">
+                <thead>
+                    <td scope="col" style= "color: rgb(238,214,0)">Date</td>
+                    <td scope="col" style= "color: rgb(238,214,0)">Item Name</td>
+                    <td scope="col" style= "color: rgb(238,214,0)">Item Category</td>
+                    <td scope="col" style= "color: rgb(238,214,0)">Item Quantity</td>
+                    <td scope="col" style= "color: rgb(238,214,0)">Item Rate</td>
+                    <td scope="col" style= "color: rgb(238,214,0)">Total</td>
+                </thead>
+                <tbody>
+                    {% for row in students %}
+                    <tr>
+                        <td scope="row">{{row["DATE"]}}</td>
+                        <td>{{ row["NAME"]}}</td>
+                        <td>{{row['CATEGORY']}}</td>
+                        <td>{{row["QUANTITY"]}}</td>
+                        <td>{{row["RATE"]}}</td>
+                        <td>{{row['TOTAL']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-    </nav>
-
-    <div class="container">
-        <table class="table table-dark">
-            <thead>
-                <td scope="col">Date</td>
-                <td scope="col">Item Name</td>
-                <td scope="col">Item Category</td>
-                <td scope="col">Item Quantity</td>
-                <td scope="col">Item Rate</td>
-                <td scope="col">Total</td>
-            </thead>
-            <tbody>
-                {% for row in students %}
-                <tr>
-                    <td scope="row">{{row["DATE"]}}</td>
-                    <td> {{ row["NAME"]}}</td>
-                    <td>{{row['CATEGORY']}}</td>
-                    <td>{{row["QUANTITY"]}}</td>
-                    <td>{{row["RATE"]}}</td>
-                    <td>{{row['TOTAL']}}</td>
-                    <!--<td><a href="/delete/{{row['NAME']}}">Delete</a></td>-->
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
-
-</body>
-
+    </body>
 </html>

@@ -1,50 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <link
+        rel="icon"
+        href="../static/images/Invento1.jpeg"
+        type="image/icon type"
+    />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://www.w3schools.com/w3css/4/w3.css"
+        />
+        <link rel="stylesheet" href="../static/css/homepage.css" />
+        <link rel="stylesheet" href="../static/css/login.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/css/addInventory.css" />
-    <title>Inventory Management System - Register</title>
-</head>
+        <title>Inventory Management System</title>
+    </head>
 
-<body>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/"> &nbsp;&nbsp; &nbsp;Invento</a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <form action="{{ url_for('addrec') }}" class="form" method="POST">
-        <div class="title">Register</div>
-        <div class="input-container ic1">
-            <input id="name" class="input" type="text" name="name" placeholder=" " />
-            <div class="cut"></div>
-            <label for="name" class="placeholder">Name</label>
+        <div class="row g-3">
+            <div
+                class="row d-flex justify-content-center align-items-center"
+                style="margin-left: 80px"
+            >
+                <div class="col">
+                    <img
+                        style="height: 550px"
+                        src="../static/images/Signup.svg"
+                        alt="abc"
+                    />
+                </div>
+                <div class="col">
+                    <div>
+                        <form
+                            action="{{ url_for('addrec') }}"
+                            class="form"
+                            method="POST"
+                        >
+                            <div class="input-container ic1">
+                                <input
+                                    id="name"
+                                    class="input"
+                                    type="text"
+                                    name="name"
+                                    placeholder=" "
+                                />
+                                <div class="cut"></div>
+                                <label for="name" class="placeholder"
+                                    >Name</label
+                                >
+                            </div>
+                            <div class="input-container ic2">
+                                <input
+                                    id="email"
+                                    class="input"
+                                    type="email"
+                                    name="email"
+                                    placeholder=" "
+                                />
+                                <div class="cut"></div>
+                                <label for="email" class="placeholder"
+                                    >Email</label
+                                >
+                            </div>
+                            <div class="input-container ic2">
+                                <input
+                                    id="phone"
+                                    class="input"
+                                    type="text"
+                                    name="phone"
+                                    placeholder=" "
+                                />
+                                <div class="cut"></div>
+                                <label for="phone" class="placeholder"
+                                    >Phone</label
+                                >
+                            </div>
+                            <div class="input-container ic2">
+                                <input
+                                    id="password"
+                                    class="input"
+                                    type="password"
+                                    name="password"
+                                    placeholder=" "
+                                />
+                                <div class="cut"></div>
+                                <label for="password" class="placeholder"
+                                    >Password</label
+                                >
+                            </div>
+                            <input
+                                type="submit"
+                                class="submit"
+                                value="Register"
+                            />
+                            <div class="register">
+                                <p>
+                                    Already an user?
+                                    <a href="/login">Login Here</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="input-container ic2">
-            <input id="email" class="input" type="email" name="email" placeholder=" " />
-            <div class="cut"></div>
-            <label for="email" class="placeholder">Email</label>
-        </div>
-        <div class="input-container ic2">
-            <input id="phone" class="input" type="text" name="phone" placeholder=" " />
-            <div class="cut"></div>
-            <label for="phone" class="placeholder">Phone</label>
-        </div>
-        <div class="input-container ic2">
-            <input id="password" class="input" type="password" name="password" placeholder=" " />
-            <div class="cut"></div>
-            <label for="password" class="placeholder">Password</label>
-        </div>
-        <input type="submit" class="submit" value="Register">
-        <div class="login">
-            <p>Already an user? <a href="/login">Login Here</a></p>
-        </div>
-    </form>
 
+        <!--   FOOTER -->
 
+        <!-- Footer -->
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <!-- Section: Links  -->
 
-
-</body>
-
+            <!-- Copyright -->
+            <div
+                class="text-center p-4"
+                style="background-color: rgba(0, 0, 0, 0.05)"
+            >
+                © 2022 Copyright:
+                <a
+                    class="text-reset fw-bold"
+                    href="https://github.com/IBM-EPBL/IBM-Project-25983-1659978608"
+                    >IBM-Project-25983-1659978608</a
+                >
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </body>
 </html>

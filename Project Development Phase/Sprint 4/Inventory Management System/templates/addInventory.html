@@ -1,57 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"
+        ></script>
+        <link
+        rel="icon"
+        href="../static/images/Invento1.jpeg"
+        type="image/icon type"
+    />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+            integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+            crossorigin="anonymous"
+        />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"
+        ></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            rel="stylesheet"
+            href="https://www.w3schools.com/w3css/4/w3.css"
+        />
 
-<head>
-    <title>Add Inventory</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/css/addInventory.css" />
+        <link rel="stylesheet" href="../static/css/addInventory.css" />
+    </head>
 
-</head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"> &nbsp;&nbsp; Invento </a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<body>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/home"
+                            >Home <span class="sr-only">(current)</span></a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/addInventory"
+                            >Add Inventory</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/history"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Stock History</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="reports"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Report</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/logout"
+                            tabindex="-1"
+                            aria-disabled="true"
+                            >Logout</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
-    <form class="form" action="{{ url_for('add') }}" method="POST">
-        <div class="title">Add Inventory Stock</div>
-        <div class="subtitle">Note: Add accurate stock details</div>
-        <div class="input-container ic1">
-            <input id="date" class="input" type="date" name="date" placeholder=" " />
-            <div class="cut"></div>
-            <label for="date" class="placeholder">Date</label>
+        <div class="row g-3">
+            <div
+                class="row d-flex justify-content-center align-items-center"
+            >
+                <div class="col">
+                    <form
+                        class="form"
+                        action="{{ url_for('add') }}"
+                        method="POST"
+                    >
+                        <div class="title">Add Inventory Stock</div>
+
+                        <div class="input-container ic1">
+                            <input
+                                id="date"
+                                class="input"
+                                type="date"
+                                name="date"
+                                placeholder=" "
+                            />
+                            <div class="cut"></div>
+                            <label for="date" class="placeholder">Date</label>
+                        </div>
+                        <div class="input-container ic2">
+                            <input
+                                id="itemName"
+                                class="input"
+                                type="text"
+                                name="itemName"
+                                placeholder=" "
+                            />
+                            <div class="cut"></div>
+                            <label for="itemName" class="placeholder"
+                                >Item Name</label
+                            >
+                        </div>
+                        <div class="input-container ic2">
+                            <input
+                                id="itemQuantity"
+                                class="input"
+                                type="text"
+                                name="itemQuantity"
+                                placeholder=" "
+                            />
+                            <div class="cut"></div>
+                            <label for="itemQuantity" class="placeholder"
+                                >Item Quantity</label
+                            >
+                        </div>
+                        <div class="input-container ic2">
+                            <input
+                                id="itemRate"
+                                class="input"
+                                type="text"
+                                name="itemRate"
+                                placeholder=" "
+                            />
+                            <div class="cut"></div>
+                            <label for="itemRate" class="placeholder"
+                                >Item Rate</label
+                            >
+                        </div>
+                        <div class="input-container ic2">
+                            <select
+                                id="itemCategory"
+                                class="input"
+                                name="itemCategory"
+                                placeholder=" "
+                            >
+                                <option value="food">Food</option>
+                                <option value="electronicitems">
+                                    Electronic Items
+                                </option>
+                                <option value="books">Books</option>
+                                <option value="furniture">Furniture</option>
+                                <option value="cosmetics">Cosmetics</option>
+                                <option value="miscellaneous">
+                                    Miscellaneous
+                                </option>
+                            </select>
+                            <div class="cut"></div>
+                            <label for="itemCategory" class="placeholder"
+                                >Item Category</label
+                            >
+                        </div>
+                        <input type="submit" class="submit" value="Submit" />
+                    </form>
+                </div>
+            </div>
         </div>
-        <div class="input-container ic2">
-            <input id="itemName" class="input" type="text" name="itemName" placeholder=" " />
-            <div class="cut"></div>
-            <label for="itemName" class="placeholder">Item Name</label>
-        </div>
-        <div class="input-container ic2">
-            <input id="itemQuantity" class="input" type="text" name="itemQuantity" placeholder=" " />
-            <div class="cut"></div>
-            <label for="itemQuantity" class="placeholder">Item Quantity</label>
-        </div>
-        <div class="input-container ic2">
-            <input id="itemRate" class="input" type="text" name="itemRate" placeholder=" " />
-            <div class="cut"></div>
-            <label for="itemRate" class="placeholder">Item Rate</label>
-        </div>
-        <div class="input-container ic2">
-            <select id="itemCategory" class="input" name="itemCategory" placeholder=" ">
-                <option value="food">Food</option>
-                <option value="electronicitems">Electronic Items</option>
-                <option value="books">Books</option>
-                <option value="furniture">Furniture</option>
-                <option value="cosmetics">Cosmetics</option>
-                <option value="miscellaneous">Miscellaneous</option>
-            </select>
-            <div class="cut"></div>
-            <label for="itemCategory" class="placeholder">Item Category</label>
-        </div>
-        <input type="submit" class="submit" value="Submit">
-
-    </form>
-</body>
-
+    </body>
 </html>

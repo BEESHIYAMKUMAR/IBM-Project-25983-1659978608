@@ -2,37 +2,183 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../static/history.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript" src="jscript/graph.js"></script>
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+        crossorigin="anonymous"
+    />
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"
+    ></script>
+    <link
+    rel="icon"
+    href="../static/images/Invento1.jpeg"
+    type="image/icon type"
+/>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+        integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+        crossorigin="anonymous"
+    />
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+        crossorigin="anonymous"
+    />
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+        rel="stylesheet"
+        href="https://www.w3schools.com/w3css/4/w3.css"
+    />
+    <link rel="stylesheet" href="../static/css/home.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    Inventory Management System</a>
-            </div>
-            <ul class="nav navbar-nav">
 
-                <li class="active"><a href="/home">Home</a></li>
-                <li><a href="/addInventory">Add Inventory</a></li>
-                <li><a href="/history">History</a></li>
-                <li><a href="/limit">Limit</a></li>
-                <li><a href="/today">Report</a></li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/"> &nbsp;&nbsp; Invento </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-                <li><a href="/logout">Logout</a></li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addInventory">Add Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/history" tabindex="-1" aria-disabled="true">Stock History</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reports" tabindex="-1" aria-disabled="true">Report</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
+
+
 
     <body>
 
-        <h4>{{msg}}</h4>
+        <h1 style="color: rgb(238,214,0)">Dashboard: {{msg}}</h1>
 
+        <div class = "row justify-content-center">
+        <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Food</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[3]}}</h5>
+            </div>
+          </div>
+          <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Electronics</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[2]}}</h5>
+            </div>
+          </div>
+          <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Books</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[0]}}</h5>
+            </div>
+          </div>
+          <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Furniture</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[4]}}</h5>
+            </div>
+          </div>
+          <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Cosmetics</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[1]}}</h5>
+            </div>
+          </div>
+          <div class="col card text-white bg-dark mb-3" style="max-width: 18rem;">
+            <div class="card-header">Miscellaneous</div>
+            <div class="card-body">
+              <h5 class="card-title" style="color: rgb(238,214,0)">{{results[5]}}</h5>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+        <div class="col-md-6">
+            <img
+            style="height: 450px"
+            src="../static/images/Data.svg"
+            alt="abc"
+        />
+        </div>
+        <div class="col-md-6" style="position: relative; height:20vh; width:40vw">
 
+            <canvas id="myChart" class="chart" width="400" height="400"></canvas>
+            <script>
+                let books = '{{results[0]}}'
+                let cosmetics = '{{results[1]}}'
+                let electronicItems = '{{results[2]}}'
+                let food = '{{results[3]}}'
+                let furniture = '{{results[4]}}'
+                let miscellaneous = '{{results[5]}}'
+                console.log(food, books)
+                var ctx = document.getElementById('myChart').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Books","Cosmetics","Electronic Items","Food","Furniture", "Miscellaneous"],
+                        datasets: [{
+                            label: 'Inventory Chart',
+                            data: [books,cosmetics, electronicItems, food, furniture, miscellaneous],
+                            backgroundColor: [
+                                'rgb(255, 99, 132)',
+                                'rgb(0, 255, 0)',
+                                'rgb(255, 205, 86)',
+                                'rgb(201, 203, 207)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 0, 0)'
+                            ],
+
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                            },
+                            title: {
+                                display: true,
+                                text: 'STOCK BREAKDOWN'
+                            }
+                        }
+
+                    }
+                });
+            </script>
+        </div>
+        </div>
+    </div>
     </body>
-
 </html>
