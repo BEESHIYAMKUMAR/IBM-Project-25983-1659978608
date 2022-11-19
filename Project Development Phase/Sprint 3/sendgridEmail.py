@@ -2,7 +2,7 @@ import sendgrid
 import os
 from sendgrid.helpers.mail import Mail, Email, To, Content
 
-sg = sendgrid.SendGridAPIClient(api_key='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')
+sg = sendgrid.SendGridAPIClient(api_key='SENDGRID_API_KEY')
 from_email = Email("maaz19121.it@rmkec.ac.in")
 to_email = To("byna19127.cs@rmkec.ac.in")
 subject = "Sending with SendGrid is Fun"
